@@ -13,20 +13,22 @@ fun main() {
     // person2.printPerson()
     // val assistant = Assistant()
     // assistant.bringCoffee(3, "Coffee")
-    var name: String 
-    var brand: String 
-    var size: Float 
-    var price: Int 
+    // var name: String 
+    // var brand: String 
+    // var size: Float 
+    // var price: Int 
 
-    println("Insert the name of the product: ")
-    name = readLine() ?: ""
-    println("Insert the brand of the product: ")
-    brand = readLine() ?: ""
-    println("Insert the size of the product: ")
-    size = readLine()?.toFloat() ?: 0f
-    println("Insert the price of the product: ")
-    price = readLine()?.toInt() ?: 0
+    // println("Insert the name of the product: ")
+    // name = readLine() ?: ""
+    // println("Insert the brand of the product: ")
+    // brand = readLine() ?: ""
+    // println("Insert the size of the product: ")
+    // size = readLine()?.toFloat() ?: 0f
+    // println("Insert the price of the product: ")
+    // price = readLine()?.toInt() ?: 0
 
-    val productCard = ProductCard(name, brand, size, price)
-    productCard.printProductCard()
+    // val productCard = ProductCard(name, brand, size, price)
+    // productCard.printProductCard()
+    val rectangle = Rectangle(10, 20)
+    rectangle.draw()
 }
