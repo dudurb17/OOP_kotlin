@@ -11,4 +11,6 @@ fun main() {
     println("Insert your age: ")
     person2.age = readLine()?.toInt() ?: 0
     person2.printPerson()
+    val assistant = Assistant()
+    assistant.bringCoffee(3, "Coffee")
 }
