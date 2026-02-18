@@ -27,7 +27,6 @@ fun main() {
     println("Insert the price of the product: ")
     price = readLine()?.toInt() ?: 0
 
-    val productCard = ProductCard()
-    productCard.init(name, brand, size, price)
+    val productCard = ProductCard(name, brand, size, price)
     productCard.printProductCard()
 }
