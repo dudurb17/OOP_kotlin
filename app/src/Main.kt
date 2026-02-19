@@ -29,6 +29,9 @@ fun main() {
 
     // val productCard = ProductCard(name, brand, size, price)
     // productCard.printProductCard()
-    val rectangle = Rectangle(10, 20)
-    rectangle.draw()
+    // val rectangle = Rectangle(10, 20)
+    // rectangle.draw()
+
+    val consultant = Consultant("Eduardo", 21)
+    consultant.sayHello()
 }

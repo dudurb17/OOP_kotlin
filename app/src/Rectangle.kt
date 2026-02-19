@@ -1,13 +1,4 @@
-class Rectangle {
- var width: Int 
- var height: Int 
-
- constructor(): this(0) 
-
- constructor(width: Int, height: Int) {
-  this.width = width
-  this.height = height
- }
+class Rectangle (var width: Int = 0, var height: Int = 0) {
 
  constructor(size: Int): this(size, size) 
 
