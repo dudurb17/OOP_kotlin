@@ -1,14 +1,9 @@
-class Assistant {
-  fun bringCoffee(coffeeCount: Int, drinkName: String)
+class Assistant (var name: String = "Assistant"){
+  fun bringCoffee( drinkName: String): String
   { 
-    repeat(coffeeCount) {
+      println("Hello, You are my assistant $name")
       println("Bringing coffee")
-      println("Coffee $it")
-      println("Take coffee")
-      println("Bring coffee to the office")
-      println("Sit down")
-      println("Drink $drinkName")
-      println("Enjoy your coffee")
-    }
+      println("Coffee $drinkName")
+      return "Coffee $drinkName"
   }
 }

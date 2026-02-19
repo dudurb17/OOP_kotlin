@@ -13,10 +13,10 @@ fun main() {
     // person2.printPerson()
     // val assistant = Assistant()
     // assistant.bringCoffee(3, "Coffee")
-    // var name: String 
-    // var brand: String 
-    // var size: Float 
-    // var price: Int 
+    // var name: String
+    // var brand: String
+    // var size: Float
+    // var price: Int
 
     // println("Insert the name of the product: ")
     // name = readLine() ?: ""
@@ -32,6 +32,9 @@ fun main() {
     // val rectangle = Rectangle(10, 20)
     // rectangle.draw()
 
-    val consultant = Consultant("Eduardo", 21)
-    consultant.sayHello()
+    // val assistant = Assistant("Assistant")
+    // val director = Director(assistant)
+    // director.takeCoffee()
+    val person = Person("Edu")
+    person.serveCustomers()
 }

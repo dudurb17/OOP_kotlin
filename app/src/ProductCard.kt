@@ -1,4 +1,4 @@
-class ProductCard (var name: String, var brand: String, var size: Float, var price: Int) {
+class ProductCard(var name: String, var brand: String, var size: Float, var price: Int) {
 
   // fun init( name: String, brand: String, size: Float, price: Int) {
   //   this.name = name
@@ -13,5 +13,4 @@ class ProductCard (var name: String, var brand: String, var size: Float, var pri
     println("Size: $size")
     println("Price: $price")
   }
-
 }
