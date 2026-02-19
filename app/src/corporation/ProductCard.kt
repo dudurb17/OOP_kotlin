@@ -1,3 +1,4 @@
+package corporation
 class ProductCard(var name: String, var brand: String, var size: Float, var price: Int) {
 
   // fun init( name: String, brand: String, size: Float, price: Int) {

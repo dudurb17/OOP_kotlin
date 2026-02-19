@@ -1,3 +1,5 @@
+import cats.WorkWithCats
+
 fun main() {
     // val person = Person()
     // val person2 = Person()
@@ -35,6 +37,7 @@ fun main() {
     // val assistant = Assistant("Assistant")
     // val director = Director(assistant)
     // director.takeCoffee()
-    val person = Person("Edu")
-    person.serveCustomers()
+    // val person = Person("Edu")
+    // person.serveCustomers()
+    WorkWithCats().main()
 }
