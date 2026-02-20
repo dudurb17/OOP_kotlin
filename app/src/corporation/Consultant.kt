@@ -3,6 +3,9 @@ package corporation
 import kotlin.random.Random
 
 class Consultant(name: String, age: Int = 0) : Worker(name, age) {
+  override fun work() {
+    println("Consultant is working now...")
+  }
 
   fun sayHello() {
     println("Hello, my name is $name")

@@ -13,4 +13,3 @@ class WorkWithCats {
     cat.playWithMouse()
   }
 }
-}

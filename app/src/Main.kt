@@ -4,50 +4,10 @@ import corporation.Director
 import corporation.Worker
 
 fun main() {
-    // val person = Person()
-    // val person2 = Person()
-    // println("Insert your name: ")
-    // person.name = readLine() ?: ""
-    // println("Insert your age: ")
-    // person.age = readLine()?.toInt() ?: 0
-    // person.printPerson()
-    // println("Insert your name: ")
-    // person2.name = readLine() ?: ""
-    // println("Insert your age: ")
-    // person2.age = readLine()?.toInt() ?: 0
-    // person2.printPerson()
-    // val assistant = Assistant()
-    // assistant.bringCoffee(3, "Coffee")
-    // var name: String
-    // var brand: String
-    // var size: Float
-    // var price: Int
 
-    // println("Insert the name of the product: ")
-    // name = readLine() ?: ""
-    // println("Insert the brand of the product: ")
-    // brand = readLine() ?: ""
-    // println("Insert the size of the product: ")
-    // size = readLine()?.toFloat() ?: 0f
-    // println("Insert the price of the product: ")
-    // price = readLine()?.toInt() ?: 0
-
-    // val productCard = ProductCard(name, brand, size, price)
-    // productCard.printProductCard()
-    // val rectangle = Rectangle(10, 20)
-    // rectangle.draw()
-
-    // val assistant = Assistant("Assistant")
-    // val director = Director(assistant)
-    // director.takeCoffee()
-    // val person = Person("Edu")
-    // person.serveCustomers()
-    // WorkWithCats().main()
-
-    val consultant: Worker = Consultant(name = "John")
-    val director: Worker = Director(name = "Jane", age = 40)
-    val assistant: Worker = Assistant(name = "Jim", age = 20)
-    (director as Director).takeCoffee(assistant as Assistant)
-    director.getConsultantToWork(consultant as Consultant)
-    println(consultant.name)
+    val consultant = Consultant(name = "John")
+    val director = Director(name = "Jane", age = 40)
+    val assistant = Assistant(name = "Jim", age = 20)
+    val employees = listOf<Worker>(consultant, director, assistant)
+    employees.forEach { it.work() }
 }

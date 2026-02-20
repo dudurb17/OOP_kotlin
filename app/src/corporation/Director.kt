@@ -1,7 +1,9 @@
 package corporation
 
 class Director(name: String, age: Int = 0) : Worker(name, age) {
-
+  override fun work() {
+    println("Director is working now...")
+  }
   fun takeCoffee(assistant: Assistant) {
     val drinkName: String = assistant.bringCoffee(drinkName = "Coffee")
     println("Director ${assistant.name} is taking coffee: $drinkName")
