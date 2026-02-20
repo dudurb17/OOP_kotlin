@@ -1,4 +1,7 @@
-import cats.WorkWithCats
+import corporation.Assistant
+import corporation.Consultant
+import corporation.Director
+import corporation.Worker
 
 fun main() {
     // val person = Person()
@@ -39,5 +42,12 @@ fun main() {
     // director.takeCoffee()
     // val person = Person("Edu")
     // person.serveCustomers()
-    WorkWithCats().main()
+    // WorkWithCats().main()
+
+    val consultant: Worker = Consultant(name = "John")
+    val director: Worker = Director(name = "Jane", age = 40)
+    val assistant: Worker = Assistant(name = "Jim", age = 20)
+    (director as Director).takeCoffee(assistant as Assistant)
+    director.getConsultantToWork(consultant as Consultant)
+    println(consultant.name)
 }
