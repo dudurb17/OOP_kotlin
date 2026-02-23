@@ -1,10 +1,12 @@
 package corporation
-class Accountant() {
-  var option: Int = 0
+class Accountant(name: String, age: Int = 0) : Worker(name, age) {
 
-  fun registerNewItem() {
-    println("Enter the product type: 0 - food, 1 - appliance, 2 - shoe: ")
-    val productType = readLine()?.toInt() ?: 0
+  override fun work() {
+    val productTypes = ProductType.entries
+    print("Enter the product type: ")
+    productTypes.forEach { print("${it.ordinal} - ${it.title}"); if(it.ordinal == productTypes.size - 1) println(":"); else print(", "); }
+    val productTypeIndex = readLine()?.toInt() ?: 0
+    val productType: ProductType = productTypes[productTypeIndex]
     println("Enter the product name: ")
     val productName = readLine() ?: ""
     println("Enter the product brand: ")
@@ -13,7 +15,7 @@ class Accountant() {
     val productPrice = readLine()?.toInt() ?: 0
     var card: ProductCard = ProductCard(name = "", brand = "", price = 0)
     when (productType) {
-      0 -> {
+      ProductType.FOOD -> {
         println("Enter the caloric: ")
         val caloric = readLine()?.toInt() ?: 0
         card =
@@ -24,7 +26,7 @@ class Accountant() {
                         caloric = caloric
                 )
       }
-      1 -> {
+      ProductType.APPLIANCE -> {
         println("Enter the wattage: ")
         val wattage = readLine()?.toInt() ?: 0
         card =
@@ -35,7 +37,7 @@ class Accountant() {
                         wattage = wattage
                 )
       }
-      2 -> {
+      ProductType.SHOE -> {
         println("Enter the size: ")
         val size = readLine()?.toFloat() ?: 0.0f
         card = ShoeCard(name = productName, brand = productBrand, price = productPrice, size = size)
@@ -45,13 +47,16 @@ class Accountant() {
   }
 
   fun main() {
+    val operationCodes = OperationCode.entries
     do {
-      println("Enter the operation code: 0 - exit, 1 - register new item: ")
-      option = readLine()?.toInt() ?: 0
-      if (option == 0) {
-        break
-      } else {
-        registerNewItem()
+      print("Enter the operation codße: ")
+      operationCodes.forEach { print("${it.ordinal} - ${it.title}"); if(it.ordinal == operationCodes.size - 1) println(":"); else print(", "); }
+      val optionIndex = readLine()?.toInt() ?: 0
+      val operationCode: OperationCode = operationCodes[optionIndex]
+      when (operationCode) {
+        OperationCode.EXIT -> break
+        OperationCode.REGISTER_NEW_ITEM -> work()
+        OperationCode.DELETE_ITEM -> break
       }
     } while (true)
   }
