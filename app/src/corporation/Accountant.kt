@@ -1,5 +1,8 @@
 package corporation
+import files.WorkingWithFiles
+
 class Accountant(name: String, age: Int = 0) : Worker(name, age) {
+  val items = mutableListOf<ProductCard>()
 
   override fun work() {
     val productTypes = ProductType.entries
@@ -43,7 +46,13 @@ class Accountant(name: String, age: Int = 0) : Worker(name, age) {
         card = ShoeCard(name = productName, brand = productBrand, price = productPrice, size = size)
       }
     }
-    card.printProductCard()
+    WorkingWithFiles().createListOfCards(listOf(card))
+
+    items.add(card)
+  }
+
+  fun showAllItems() {
+    WorkingWithFiles().readListOfCards()
   }
 
   fun main() {
@@ -56,7 +65,7 @@ class Accountant(name: String, age: Int = 0) : Worker(name, age) {
       when (operationCode) {
         OperationCode.EXIT -> break
         OperationCode.REGISTER_NEW_ITEM -> work()
-        OperationCode.DELETE_ITEM -> break
+        OperationCode.SHOW_ALL_ITEMS -> showAllItems()
       }
     } while (true)
   }
