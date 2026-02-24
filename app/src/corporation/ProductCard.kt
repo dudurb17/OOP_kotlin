@@ -6,4 +6,8 @@ open class ProductCard(var name: String, var brand: String, var price: Int) {
     println("Brand: $brand")
     println("Price: $price")
   }
+
+  open fun toStringToStorageFile(): String {
+    return "$name%$brand%$price"
+  }
 }

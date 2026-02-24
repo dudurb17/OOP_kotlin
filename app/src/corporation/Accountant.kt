@@ -2,7 +2,7 @@ package corporation
 import files.WorkingWithFiles
 
 class Accountant(name: String, age: Int = 0) : Worker(name, age) {
-  val items = mutableListOf<ProductCard>()
+  var items = mutableListOf<ProductCard>()
 
   override fun work() {
     val productTypes = ProductType.entries
@@ -52,13 +52,16 @@ class Accountant(name: String, age: Int = 0) : Worker(name, age) {
   }
 
   fun showAllItems() {
-    WorkingWithFiles().readListOfCards()
+    // items = WorkingWithFiles().readListOfCards()
+    items.forEach { it.printProductCard() }
+    println("\n")
   }
 
   fun main() {
     val operationCodes = OperationCode.entries
+    items = WorkingWithFiles().readListOfCards()
     do {
-      print("Enter the operation codße: ")
+      print("Enter the operation code: ")
       operationCodes.forEach { print("${it.ordinal} - ${it.title}"); if(it.ordinal == operationCodes.size - 1) println(":"); else print(", "); }
       val optionIndex = readLine()?.toInt() ?: 0
       val operationCode: OperationCode = operationCodes[optionIndex]

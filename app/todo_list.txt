@@ -1,4 +1,0 @@
-edu, as, 12
-aloo, fs, 12
-Name: Will, Brand: OLLI, Price: 12
-Name: Gico, Brand: AS, Price: 32
