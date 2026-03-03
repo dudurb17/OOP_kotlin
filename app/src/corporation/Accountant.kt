@@ -52,9 +52,7 @@ class Accountant(name: String, age: Int = 0) : Worker(name, age) {
   }
 
   fun showAllItems() {
-    // items = WorkingWithFiles().readListOfCards()
     items.forEach { it.printProductCard() }
-    println("\n")
   }
 
   fun main() {
@@ -69,7 +67,24 @@ class Accountant(name: String, age: Int = 0) : Worker(name, age) {
         OperationCode.EXIT -> break
         OperationCode.REGISTER_NEW_ITEM -> work()
         OperationCode.SHOW_ALL_ITEMS -> showAllItems()
+        OperationCode.REMOVE_PRODUCT_CARD -> removeProductCard()
       }
     } while (true)
   }
+
+  fun removeProductCard() {
+    showAllItems()
+    print("Enter name of card for removing: ")
+    val name = readLine() ?: ""
+    for(item in items) {
+      if(item.name == name) {
+        items.remove(item)
+        println("Card removed successfully")
+        break
+      }
+    }
+    WorkingWithFiles().updateListOfCards(items)
+  }
+
+
 }

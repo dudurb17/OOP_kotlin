@@ -5,8 +5,7 @@ class FoodCard(name: String, brand: String, price: Int, val caloric: Int) :
 
   val productType: ProductType = ProductType.FOOD
   override fun printProductCard() {
-    super.printProductCard()
-    println("Caloric: $caloric")
+    println("Name: $name, Brand: $brand, Price: $price, Caloric: $caloric")
   }
   override fun toStringToStorageFile(): String {
     return "$name%$brand%$price%$caloric%$productType"

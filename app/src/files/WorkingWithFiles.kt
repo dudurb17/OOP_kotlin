@@ -14,6 +14,12 @@ class WorkingWithFiles {
                 cards.forEach { file.appendText("${it.toStringToStorageFile()}\n") }
         }
 
+        fun updateListOfCards(cards: List<ProductCard>) {
+                val file = File("src/files/storage/product_list.txt")
+                file.writeText("")
+                cards.forEach { file.appendText("${it.toStringToStorageFile()}\n") }
+        }
+
         fun readListOfCards(): MutableList<ProductCard> {
                 var cards = mutableListOf<ProductCard>()
                 val file = File("src/files/storage/product_list.txt")
